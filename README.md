@@ -7,6 +7,7 @@ Chamber is an open source chatroom for groups. It uses all the latest and cooles
 * Ruby 1.9.2
 * Bundler
 * Redis
+* Juggernaut
 
 # Installation
 
