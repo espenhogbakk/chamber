@@ -1,0 +1,22 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  author: espenhogbakk
+  body: Det var en gang en mann som gikk en tur i skogen!
+  room: room1 
+
+two:
+  author: johannesgorset
+  body: KOKO, KOKO, KOKO
+  room: room1 
+
+three:
+  author: espenhogbakk
+  body: Noen som sa hva for no?
+  room: room1 
+
+
+four:
+  author: espenhogbakk
+  body: Lorem lipsum dolor mit amet
+  room: room2

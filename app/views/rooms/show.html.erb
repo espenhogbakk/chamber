@@ -1,0 +1,28 @@
+
+<div id="app">
+  <div id="room">
+    <h1><%= @room.name %></h1>
+
+    <div id="foo">
+      <ul id="messages">
+        <% @room.messages.each do |message| %>
+        <%= render message %>
+        <% end %>
+      </ul>
+    </div>
+
+
+    <section>
+      <%= form_tag(messages_path, method: "post", id: "new_message") do %>
+        <%= label_tag(:body, "Message:") %>
+        <%= text_field_tag(:body) %>
+        <%= hidden_field_tag(:room_id, @room.id) %>
+        <%= submit_tag("Send") %>
+      <% end %>
+    </section>
+  </div>
+</div>
+
+  <script>
+    var room = new Chamber.Models.Room(<%= @room.to_json.html_safe %>)
+  </script>
