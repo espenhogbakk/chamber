@@ -17,7 +17,3 @@ Chamber is an open source chatroom for groups. It uses all the latest and cooles
 * start the Juggernaut server - [http://github.com/maccman/juggernaut](http://github.com/maccman/juggernaut)
 
 Now go to [http://localhost:3000](http://localhost:3000)
-
-# Clients
-
-There are at the moment no clients to Chamber, but feel free to make one yourself.
