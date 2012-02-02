@@ -1,5 +1,3 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
 one:
   author: C-3PO
   body: Artoo! Artoo-Detoo, where are you?
@@ -29,3 +27,33 @@ six:
   author: R2D2
   body: Electronic beeps...
   room: room1
+
+seven:
+  author: Jabba
+  body: Come on out, Solo!
+  room: room2
+
+eight:
+  author: Han
+  body: I've been waiting for you, Jabba.
+  room: room2
+
+nine:
+  author: Jabba
+  body: I expected you would be.
+  room: room2
+
+ten:
+  author: Han
+  body: I'm not the type to run.
+  room: room2
+
+eleven:
+  author: Jabba
+  body: Han, my boy, there are times when you disappoint me...why havent you paid me? And why did you have to fry poor Greedo like that...after all we have been through together.
+  room: room2
+
+twelve:
+  author: Han
+  body: You sent Greedo to blast me.
+  room: room2
