@@ -1,5 +1,7 @@
 Chamber::Application.routes.draw do
 
+  devise_for :users
+
   resources :messages
   resources :rooms do
     resources :messages

@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
   
-  #before_filter :require_user
+  before_filter :authenticate_user!
   before_filter :find_room, :only =>[:show, :update, :destroy]
   
   def index

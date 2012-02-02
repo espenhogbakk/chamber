@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
+  before_filter :authenticate_user!
   
   def index
     if params.include? :room_id
@@ -48,6 +49,7 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(params[:message])
+    @message.author = current_user.email
 
     respond_to do |format|
       if @message.save

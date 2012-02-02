@@ -10,6 +10,7 @@ gem "juggernaut"
 gem "thin"
 gem "rails-backbone"
 gem "jbuilder"
+gem 'devise', '~> 2'
 
 #gem "omniauth"
 #gem "carrierwave"

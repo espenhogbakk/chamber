@@ -31,11 +31,16 @@
           <ul class="nav">
             <li><a href="<%= rooms_path %>">Rooms</a></li>
           </ul>
-          <p class="navbar-text pull-right">Logged in as <a href="#">Han Solo</a></p>
+          <p class="navbar-text pull-right">Logged in as <a href="#"><%= current_user.email %></a></p>
         </div><!--/.nav-collapse -->
       </div>
     </div>
   </div>
+  
+  <% if notice or alert %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <% end %>
 
   <div class="container-fluid">
     <%= yield %>
