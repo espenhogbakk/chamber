@@ -1,7 +1,4 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 room1:
-  name: Room1
-
-room2:
-  name: Room2
+  name: Imperial spacecraft

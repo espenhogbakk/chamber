@@ -1,22 +1,31 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  author: espenhogbakk
-  body: Det var en gang en man som gikk en tur i skogen!
+  author: C-3PO
+  body: Artoo! Artoo-Detoo, where are you?
   room: room1 
 
 two:
-  author: johannesgorset
-  body: KOKO, KOKO, KOKO
-  room: room1 
+  author: R2D2
+  body: Electronic beeps...
+  room: room1
 
 three:
-  author: espenhogbakk
-  body: Noen som sa hva for noe?
+  author: C-3PO
+  body: At last! Where have you been?
   room: room1 
 
-
 four:
-  author: espenhogbakk
-  body: Lorem lipsum dolor mit amet
-  room: room2
+  author: R2D2
+  body: Electronic beeps...
+  room: room1
+  
+five:
+  author: C-3PO
+  body: They're heading in this direction. What are we going to do? We'll be sent to the spice mine of Kessel or smashed into who knows what!
+  room: room1 
+
+six:
+  author: R2D2
+  body: Electronic beeps...
+  room: room1
