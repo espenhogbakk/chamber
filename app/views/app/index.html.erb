@@ -1,1 +1,20 @@
-<h1>Juggernaut test</h1>
+<div class="row-fluid">
+  <div class="span9">
+    <div class="hero-unit">
+      <h1>Welcome to Chamber!<h1>
+      <p>Chamber is an open source chatroom for groups. It uses all the latest and coolest webtechnology to provide a fast and slick experience.</p>
+    </div>
+  </div><!--/span-->
+
+  <div class="span3">
+    <div class="well sidebar-nav">
+      <ul class="nav nav-list">
+        <li class="nav-header">Rooms</li>
+        <% @rooms.each do |room| %>
+          <li><%= link_to room.name, room %></li>
+        <% end %>
+        <li class="nav-header"><a href="<%= new_room_path %>">Create a new room</a></li>
+      </ul>
+    </div><!--/.well -->
+  </div><!--/span-->
+</div><!--/row-->

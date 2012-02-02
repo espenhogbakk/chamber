@@ -1,7 +1,13 @@
-<h1>Rooms</h1>
-
-<ul>
-<% @rooms.each do |room| %>
-    <li><%= link_to room.name, room %></li>
-<% end %>
-</ul>
+<div class="row-fluid">
+  <div class="span3">
+    <div class="well sidebar-nav">
+      <ul class="nav nav-list">
+        <li class="nav-header">Rooms</li>
+        <% @rooms.each do |room| %>
+          <li><%= link_to room.name, room %></li>
+        <% end %>
+        <li class="nav-header"><a href="<%= new_room_path %>">Create a new room</a></li>
+      </ul>
+    </div><!--/.well -->
+  </div><!--/span-->
+</div><!--/row-->

@@ -6,8 +6,7 @@ class Chamber.Views.Messages.MessageView extends Backbone.View
   #events:
   #  "click .destroy" : "destroy"
 
-  tagName: "li"
-
+  tagName: "tr"
   
   #destroy: () ->
   #  @model.destroy()
@@ -16,5 +15,5 @@ class Chamber.Views.Messages.MessageView extends Backbone.View
   #  return false
 
   render: ->
-    $(@el).html(@template(@model.toJSON() ))
+    $(@el).html(@template(@model.toJSON()))
     return this

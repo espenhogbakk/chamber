@@ -11,10 +11,8 @@ class Chamber.Views.Messages.IndexView extends Backbone.View
 
   addOne: (message) =>
     view = new Chamber.Views.Messages.MessageView({model : message})
-    @$("ul").append(view.render().el)
+    $("tbody", @el).append(view.render().el)
 
   render: =>
-    console.log("... render Messages IndexView ...")
-    $(@el).html(@template(messages: @options.messages.toJSON() ))
-
+    $(@el).html(@template(messages: @options.messages.toJSON()))
     return this

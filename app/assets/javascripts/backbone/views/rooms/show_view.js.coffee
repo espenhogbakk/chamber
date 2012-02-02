@@ -10,20 +10,25 @@ class Chamber.Views.Rooms.ShowView extends Backbone.View
   }
   
   render: =>
-    console.log("... render Rooms.ShowView ...")
-    
+
     # Render a list of messages
-    # Then input that into this render
+    # Then input that into this element
+    
+    # Change the url, to only fetch messages for this room
     Messages.url = '/rooms/' + room.id + '/messages'
     Messages.fetch()
     
     view = new Chamber.Views.Messages.IndexView(
       {
+        el: $("#messages", @el)
         messages: Messages
       }
     )
-    html = view.render()
-    $("#foo", @el).html(html.el)
+    
+    messages_html = view.render().el
+
+    $(".wrapper", @el).html(messages_html)
+
     return this
   
   doSubmit: (e) ->
@@ -35,8 +40,6 @@ class Chamber.Views.Rooms.ShowView extends Backbone.View
       body: body,
       room_id: room.id
     })
-    
-    @render()
         
     e.preventDefault()
     return false
