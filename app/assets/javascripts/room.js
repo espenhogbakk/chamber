@@ -16,9 +16,6 @@ $(function() {
 
     var jug = new Juggernaut
     jug.subscribe("/observer", function(data){
-        //console.log(data)
-        //room_show_view.render()
-      
         if (data.klass == 'Message') {
           console.log(messages.length)
           message = new Chamber.Models.Message(data.record)

@@ -18,6 +18,8 @@ class Chamber.Views.Rooms.ShowView extends Backbone.View
   doSubmit: (e) ->
     # Get the body of the message from the input
     body = $("#body").val()
+    $("#body").val('')
+    
     
     # Create a new message
     @collection.create({
