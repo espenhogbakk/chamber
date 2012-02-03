@@ -31,7 +31,7 @@
           <ul class="nav">
             <li><a href="<%= rooms_path %>">Rooms</a></li>
           </ul>
-          <p class="navbar-text pull-right">Logged in as <a href="#"></a></p>
+          <% if current_user %><p class="navbar-text pull-right">Logged in as <a href="#"><%= current_user.email %></a></p><% end %>
         </div><!--/.nav-collapse -->
       </div>
     </div>
