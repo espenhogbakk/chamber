@@ -17,15 +17,19 @@ class Chamber.Views.Rooms.ShowView extends Backbone.View
   
   doSubmit: (e) ->
     # Get the body of the message from the input
-    body = $("#body").val()
-    $("#body").val('')
-    
-    
+    input = $("#body")
+    body = input.val()
+
     # Create a new message
     @collection.create({
       body: body,
       room_id: room.id
-    }, {silent: true})
+    }, {
+      silent: true, 
+      success: ->
+        # Clear the input field
+        input.val('')
+    })
 
     e.preventDefault()
     return false
