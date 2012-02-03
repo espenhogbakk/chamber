@@ -7,7 +7,9 @@ Chamber::Application.routes.draw do
     resources :messages
   end
 
-  #resources :assets  
+  #resources :assets
+
+  resources :attachments
   resources :app
   
   #match "/assets/*:id" => "assets#show"
@@ -15,3 +17,4 @@ Chamber::Application.routes.draw do
   root :to => "app#index"
 
 end
+

@@ -10,7 +10,12 @@ gem "juggernaut"
 gem "thin"
 gem "rails-backbone"
 gem "jbuilder"
+
+# Devise for authentication
 gem 'devise', '~> 2'
+
+# Paperclip for handling uploads
+gem "paperclip", "~> 2.0"
 
 #gem "omniauth"
 #gem "carrierwave"
