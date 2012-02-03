@@ -7,6 +7,18 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   
+  has_many :messages
+  
+  def serializable_hash(options = nil)    
+    {
+      id: id,
+      first_name: first_name,
+      last_name: last_name,
+      full_name: full_name,
+      email: email,
+    }
+  end
+  
   def full_name
     "#{first_name} #{last_name}"
   end

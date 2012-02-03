@@ -17,7 +17,6 @@ $(function() {
     var jug = new Juggernaut
     jug.subscribe("/observer", function(data){
         if (data.klass == 'Message') {
-          console.log(messages.length)
           message = new Chamber.Models.Message(data.record)
           messages.add(message)
         }

@@ -23,7 +23,7 @@ class Chamber.Views.Rooms.ShowView extends Backbone.View
     # Create a new message
     @collection.create({
       body: body,
-      room_id: room.id
+      room_id: room.id,
     }, {
       silent: true, 
       success: ->

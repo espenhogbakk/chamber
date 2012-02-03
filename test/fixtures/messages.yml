@@ -1,59 +1,59 @@
 one:
-  author: C-3PO
+  user: threepio
   body: Artoo! Artoo-Detoo, where are you?
   room: room1 
 
 two:
-  author: R2D2
+  user: artoo
   body: Electronic beeps...
   room: room1
 
 three:
-  author: C-3PO
+  user: threepio
   body: At last! Where have you been?
   room: room1 
 
 four:
-  author: R2D2
+  user: artoo
   body: Electronic beeps...
   room: room1
   
 five:
-  author: C-3PO
+  user: threepio
   body: They're heading in this direction. What are we going to do? We'll be sent to the spice mine of Kessel or smashed into who knows what!
   room: room1 
 
 six:
-  author: R2D2
+  user: artoo
   body: Electronic beeps...
   room: room1
 
 seven:
-  author: Jabba
+  user: jabba
   body: Come on out, Solo!
   room: room2
 
 eight:
-  author: Han
+  user: han
   body: I've been waiting for you, Jabba.
   room: room2
 
 nine:
-  author: Jabba
+  user: jabba
   body: I expected you would be.
   room: room2
 
 ten:
-  author: Han
+  user: han
   body: I'm not the type to run.
   room: room2
 
 eleven:
-  author: Jabba
+  user: jabba
   body: Han, my boy, there are times when you disappoint me...why havent you paid me? And why did you have to fry poor Greedo like that...after all we have been through together.
   room: room2
 
 twelve:
-  author: Han
+  user: han
   body: You sent Greedo to blast me.
   room: room2

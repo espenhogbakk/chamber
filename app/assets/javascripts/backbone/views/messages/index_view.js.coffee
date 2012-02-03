@@ -15,6 +15,5 @@ class Chamber.Views.Messages.IndexView extends Backbone.View
     $("tbody", @el).append(view.render().el)
 
   render: =>
-    console.log(@options.messages)
     $(@el).html(@template(messages: @options.messages.toJSON()))
     return this

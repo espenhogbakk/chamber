@@ -4,8 +4,22 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+threepio:
+  first_name: See
+  last_name: Threepio
+  email: threepio@thegalaxy.com
+
+artoo:
+  first_name: Artoo
+  last_name: Detoo
+  email: artoo@thegalaxy.com
+
+jabba:
+  first_name: Jabba
+  last_name: The Hut
+  email: jabba@thegalaxy.com
+
+han:
+  first_name: Han
+  last_name: Solo
+  email: han@thegalaxy.com

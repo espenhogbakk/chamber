@@ -15,5 +15,6 @@ class Chamber.Views.Messages.MessageView extends Backbone.View
   #  return false
 
   render: ->
+    # TODO Add user to the JSON
     $(@el).html(@template(@model.toJSON()))
     return this
