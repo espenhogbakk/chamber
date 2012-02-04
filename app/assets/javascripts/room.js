@@ -21,6 +21,8 @@ $(function() {
       host: 'chamber.herokuapp.com',
       port: 80
     })
+    //var jug = new Juggernaut()
+    
     jug.subscribe("/observer", function(data){
         if (data.klass == 'Message') {
           message = new Chamber.Models.Message(data.record)
@@ -32,21 +34,3 @@ $(function() {
     })
   }
 })
-
-/*
-Received: {
-  "channels":["/observer"],
-  "data":{
-    "type":"create",
-    "id":6,
-    "klass":"Participation",
-    "record":{
-      "created_at":"2012-02-04T13:24:49Z",
-      "id":6,
-      "room_id":1031433111,
-      "updated_at":"2012-02-04T13:24:49Z",
-      "user_id":806833976
-    }
-  }
-}
-*/

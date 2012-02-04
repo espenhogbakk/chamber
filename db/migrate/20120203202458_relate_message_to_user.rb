@@ -1,10 +1,10 @@
 class RelateMessageToUser < ActiveRecord::Migration
   def up
-      remove_column(:messages, :author)
+      remove_column(:messages, :users)
   end
 
   def down
-      add_column :messages, :author, :string
+      add_column :messages, :users, :string
   end
 
   def change
