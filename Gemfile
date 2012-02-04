@@ -19,6 +19,11 @@ gem "paperclip", "~> 2.0"
 #gem 'sqlite3'
 gem 'pg'
 
+# Gems used in development
+group :development do
+  gem 'sqlite3'
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
