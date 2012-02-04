@@ -9,12 +9,8 @@ Chamber::Application.routes.draw do
     resources :participants
   end
 
-  #resources :assets
-
   resources :attachments
   resources :app
-  
-  #match "/assets/*:id" => "assets#show"
   
   root :to => "app#index"
 
