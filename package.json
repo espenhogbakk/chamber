@@ -1,0 +1,7 @@
+{
+  "name": "chamber",
+  "version": "0.0.1",
+  "dependencies": {
+    "juggernaut": "2.1.1"
+  }
+}
