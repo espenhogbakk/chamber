@@ -19,7 +19,7 @@ Chamber::Application.configure do
 
   # Generate digests for assets URLs
   config.assets.digest = true
-  
+
   #config.action_mailer.default_url_options = { :host => 'youhost' }
 
   # Defaults to Rails.root.join("public/assets")
@@ -59,4 +59,10 @@ Chamber::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  # Juggernaut host
+  config.juggernaut_host = "chamber-juggernaut.herokuapp.com"
+
+  # Juggernaut port
+  config.juggernaut_port = 80
 end
