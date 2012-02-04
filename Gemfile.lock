@@ -123,6 +123,7 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    sqlite3 (1.3.5)
     supermodel (0.1.4)
       activemodel (>= 3.0.0.beta)
     thin (1.3.1)
@@ -158,6 +159,7 @@ DEPENDENCIES
   rails (= 3.1.3)
   rails-backbone
   sass-rails (~> 3.1.5)
+  sqlite3
   supermodel
   thin
   turn (= 0.8.2)
