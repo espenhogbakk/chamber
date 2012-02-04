@@ -18,8 +18,11 @@ $(function() {
     )
 
     var jug = new Juggernaut({
+      secure: false,
       host: 'chamber.herokuapp.com',
-      port: 80
+      //host: 'localhost',
+      port: 80,
+      transports: ['xhr-polling', 'jsonp-polling']
     })
     //var jug = new Juggernaut()
     
