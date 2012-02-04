@@ -1,2 +1,2 @@
 web: bundle exec rails server -p $PORT
-web: juggernaut
+web: node_modules/.bin/juggernaut
