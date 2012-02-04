@@ -6,10 +6,16 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.drop
+//= require jquery.upload
+//
 //= require underscore
 //= require backbone
 //= require backbone_rails_sync
 //= require backbone_datalink
+//
 //= require backbone/chamber
+//
 //= require juggernaut
+//
 //= require_tree .
