@@ -20,7 +20,7 @@ gem "paperclip", "~> 2.0"
 #gem "omniauth"
 #gem "carrierwave"
 
-gem 'sqlite3'
+#gem 'sqlite3'
 gem 'pg'
 
 # Gems used only for assets and not required
