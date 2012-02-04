@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(:version => 20120204121918) do
   end
 
   create_table "messages", :force => true do |t|
-    t.text     "users"
     t.text     "body"
     t.integer  "room_id"
     t.datetime "created_at"
