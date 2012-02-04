@@ -45,5 +45,11 @@ module Chamber
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Juggernaut host
+    config.juggernaut_host = "localhost"
+
+    # Juggernaut port
+    config.juggernaut_port = 8080
   end
 end
