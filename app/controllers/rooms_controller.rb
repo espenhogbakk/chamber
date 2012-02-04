@@ -13,6 +13,9 @@ class RoomsController < ApplicationController
   end
   
   def show
+    if @room.participants.where(user_id: current_user.id).empty?
+      @room.participants.create(user_id: current_user.id)
+    end
   end
   
   def new

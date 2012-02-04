@@ -2,7 +2,12 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    @users = User.all
+    if params.include? :room_id
+      room = Room.find(params[:room_id])
+      @users = room.users
+    else
+      @users = User.all
+    end
 
     respond_to do |format|
       format.json { render json: @users }

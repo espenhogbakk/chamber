@@ -114,13 +114,13 @@
   /**
    * Parses an URI
    *
-   * @author Steven Levithan <stevenlevithan.com> (MIT license)
+   * @users Steven Levithan <stevenlevithan.com> (MIT license)
    * @api public
    */
 
   var re = /^(?:(?![^:@]+:[^:@\/]*@)([^:\/?#.]+):)?(?:\/\/)?((?:(([^:@]*)(?::([^:@]*))?)?@)?([^:\/?#]*)(?::(\d*))?)(((\/(?:[^?#](?![^?#\/]*\.[^?#\/.]+(?:[?#]|$)))*\/?)?([^?#\/]*))(?:\?([^#]*))?(?:#(.*))?)/;
 
-  var parts = ['source', 'protocol', 'authority', 'userInfo', 'user', 'password',
+  var parts = ['source', 'protocol', 'usersity', 'userInfo', 'user', 'password',
                'host', 'port', 'relative', 'path', 'directory', 'file', 'query',
                'anchor'];
 
@@ -996,7 +996,7 @@
   var reasons = parser.reasons = [
       'transport not supported'
     , 'client not handshaken'
-    , 'unauthorized'
+    , 'unusersized'
   ];
 
   /**
@@ -2174,7 +2174,7 @@
         if (packet.advice){
           this.socket.onError(packet);
         } else {
-          if (packet.reason == 'unauthorized') {
+          if (packet.reason == 'unusersized') {
             this.$emit('connect_failed', packet.reason);
           } else {
             this.$emit('error', packet.reason);

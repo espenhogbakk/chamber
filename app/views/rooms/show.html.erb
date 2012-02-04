@@ -1,16 +1,17 @@
-<div class="row-fluid">
+<div class="row-fluid" id="room">
   <div class="span3">
     <div class="well sidebar-nav">
-      <ul class="nav nav-list">
+      <ul class="nav nav-list" id="participants">
         <li class="nav-header">Members of chatroom</li>
-        <li class="active"><a href="#">Han</a></li>
-        <li><a href="#">Jabba</a></li>
+        <% @room.users.each do |user| %>
+        <li><a href="#"><%= user.full_name %></a></li>
+        <% end %>
       </ul>
     </div><!--/.well -->
   </div><!--/span-->
 
   <div class="span9">
-    <div class="" id="room">
+    <div>
       <h1><%= @room.name %></h1>
 
       <div class="wrapper">

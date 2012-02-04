@@ -11,7 +11,14 @@ class Chamber.Views.Rooms.ShowView extends Backbone.View
     @messages_index_view = new Chamber.Views.Messages.IndexView(
       {
         el: $("#messages", @el)
-        messages: @collection
+        messages: @options.messages
+      }
+    )
+    
+    @participants_index_view = new Chamber.Views.Participants.IndexView(
+      {
+        el: $("#participants", @el)
+        participants: @options.participants
       }
     )
   
@@ -21,7 +28,7 @@ class Chamber.Views.Rooms.ShowView extends Backbone.View
     body = input.val()
 
     # Create a new message
-    @collection.create({
+    @options.messages.create({
       body: body,
       room_id: room.id,
     }, {

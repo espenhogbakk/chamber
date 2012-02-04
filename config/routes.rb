@@ -6,6 +6,7 @@ Chamber::Application.routes.draw do
   resources :messages
   resources :rooms do
     resources :messages
+    resources :participants
   end
 
   #resources :assets

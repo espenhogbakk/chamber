@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
   
   has_many :messages
   
+  has_many :rooms, :through => :participants
+  
+  
   def serializable_hash(options = nil)    
     {
       id: id,

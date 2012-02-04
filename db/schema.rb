@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120203202458) do
+ActiveRecord::Schema.define(:version => 20120204121918) do
 
   create_table "assets", :force => true do |t|
     t.integer  "message_id"
@@ -33,6 +33,16 @@ ActiveRecord::Schema.define(:version => 20120203202458) do
     t.string   "author"
     t.integer  "user_id"
   end
+
+  create_table "participants", :force => true do |t|
+    t.integer  "room_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "participants", ["room_id"], :name => "index_participants_on_room_id"
+  add_index "participants", ["user_id"], :name => "index_participants_on_user_id"
 
   create_table "rooms", :force => true do |t|
     t.text     "name"

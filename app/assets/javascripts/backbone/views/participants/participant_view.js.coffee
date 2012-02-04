@@ -1,12 +1,12 @@
 Chamber.Views.Messages ||= {}
 
-class Chamber.Views.Messages.MessageView extends Backbone.View
-  template: JST["backbone/templates/messages/message"]
+class Chamber.Views.Participants.ParticipantView extends Backbone.View
+  template: JST["backbone/templates/participants/participant"]
   
   #events:
   #  "click .destroy" : "destroy"
 
-  tagName: "tr"
+  tagName: "li"
   
   #destroy: () ->
   #  @model.destroy()
