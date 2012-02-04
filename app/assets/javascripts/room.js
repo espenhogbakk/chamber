@@ -20,7 +20,6 @@ $(function() {
     var jug = new Juggernaut({
       secure: false,
       host: 'chamber-juggernaut.herokuapp.com',
-      port: 5000,
       transports: ['xhr-polling', 'jsonp-polling']
     })
     //var jug = new Juggernaut()
