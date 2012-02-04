@@ -18,4 +18,4 @@
 //
 //= require juggernaut
 //
-//= require_tree .
+//= require_tree ./backbone
