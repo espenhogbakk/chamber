@@ -2,7 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
 
-#gem "rack-less"
 gem "rack-sprockets"
 gem "supermodel"
 
@@ -16,9 +15,6 @@ gem 'devise', '~> 2'
 
 # Paperclip for handling uploads
 gem "paperclip", "~> 2.0"
-
-#gem "omniauth"
-#gem "carrierwave"
 
 #gem 'sqlite3'
 gem 'pg'

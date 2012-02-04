@@ -11,4 +11,5 @@
 //= require backbone_rails_sync
 //= require backbone_datalink
 //= require backbone/chamber
+//= require juggernaut
 //= require_tree .
