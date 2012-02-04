@@ -17,7 +17,10 @@ $(function() {
       }
     )
 
-    var jug = new Juggernaut
+    var jug = new Juggernaut({
+      host: 'chamber.herokuapp.com',
+      port: 80
+    })
     jug.subscribe("/observer", function(data){
         if (data.klass == 'Message') {
           message = new Chamber.Models.Message(data.record)

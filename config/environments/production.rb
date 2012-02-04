@@ -20,7 +20,8 @@ Chamber::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
   
-  #config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'chamber.herokuapp.com/' }
+  #redis://redistogo:07c6dddf2e951bf0fc8663e8a658526e@perch.redistogo.com:9757/
 
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
