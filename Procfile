@@ -1,1 +1,1 @@
-web: juggernaut
+web: node_modules/.bin/juggernaut
