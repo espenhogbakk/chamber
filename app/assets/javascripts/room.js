@@ -17,14 +17,14 @@ $(function() {
       }
     )
 
-    //var jug = new Juggernaut({
-      //secure: false,
-      //host: 'chamber.herokuapp.com',
-      //host: 'localhost',
-      //port: 80,
-      //transports: ['xhr-polling', 'jsonp-polling']
-    //})
-    var jug = new Juggernaut()
+    var jug = new Juggernaut({
+      secure: false,
+      host: 'chamber.herokuapp.com',
+      host: 'localhost',
+      port: 80,
+      transports: ['xhr-polling', 'jsonp-polling']
+    })
+    //var jug = new Juggernaut()
     
     jug.subscribe("/observer", function(data){
         if (data.klass == 'Message') {
