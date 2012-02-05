@@ -31,13 +31,9 @@ class Chamber.Views.Rooms.ShowView extends Backbone.View
     @options.messages.create({
       body: body,
       room_id: room.id,
-    }, {
-      silent: true, 
-      success: ->
-        # Clear the input field
-        input.val('')
-    })
+    }, { silent: true })
+
+    input.val("")
 
     e.preventDefault()
     return false
-    
