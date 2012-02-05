@@ -1,3 +1,13 @@
+<% content_for :head do %>
+  <script>
+  
+    var data = <%= raw @room.to_json %>
+    
+  </script>
+  
+  <%= javascript_include_tag "rooms/show.js" %>
+<% end %>
+
 <div class="row-fluid" id="room">
   <div class="span3">
     <div class="well sidebar-nav">
