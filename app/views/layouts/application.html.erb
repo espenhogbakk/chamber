@@ -21,6 +21,8 @@
     }
   </style>
 
+  <%= yield :head %>
+
 </head>
 <body>
   <div class="navbar navbar-fixed-top">
@@ -46,14 +48,6 @@
     <%= yield %>
     <hr>
   </div><!--/.fluid-container-->
-
-  <script>
-    <% if @room %>
-    var room = new Chamber.Models.Room(<%= @room.to_json.html_safe %>)
-    <% else %>
-    var room = undefined
-    <% end %>
-  </script>
 
 </body>
 </html>
