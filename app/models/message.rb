@@ -1,9 +1,9 @@
 class Message < ActiveRecord::Base
-  
+
   has_one :attachment
   belongs_to :user
   belongs_to :room
-  
+
   validates_presence_of :body, :room_id, :user_id
 
   def serializable_hash(options = nil)    
@@ -16,5 +16,5 @@ class Message < ActiveRecord::Base
       created_at: created_at
     }
   end
-  
+
 end
