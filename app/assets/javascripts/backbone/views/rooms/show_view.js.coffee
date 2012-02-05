@@ -32,14 +32,12 @@ class Chamber.Views.Rooms.ShowView extends Backbone.View
       body: body,
       room_id: room.id,
     }, {
-      silent: true,
+      silent: true, 
       error: ->
-        # Since we cleared the input before, if there is an
-        # error, we should repopulate the input field
+        # Clear the input field
         input.val(body)
-        # TODO Add some kind of "notification" system that 
-        # warns the user that there was an error.
-     })
+      }
+    )
 
     # Clear the input field at once
     input.val("")
