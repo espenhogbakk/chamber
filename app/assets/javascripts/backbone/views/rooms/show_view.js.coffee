@@ -43,10 +43,10 @@ class Chamber.Views.Rooms.ShowView extends Backbone.View
     @upload file for file in files
   
   upload: (file) =>
-    @options.messages.url = '/messages'
-    message = @options.messages.create({
+    @model.messages.url = '/messages'
+    message = @model.messages.create {
       body: "Uploading " + file.name,
-      room_id: room.id
+      room_id: @model.id
     }, {
       silent: true, 
       success: (model, response) ->
@@ -64,4 +64,4 @@ class Chamber.Views.Rooms.ShowView extends Backbone.View
           #model.set({attachment: data, body: file.name + ": " + data.attachment_url})
           #model.save()
         )
-    })
+    }
