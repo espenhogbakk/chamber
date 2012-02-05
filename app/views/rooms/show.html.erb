@@ -1,3 +1,36 @@
+<% content_for :head do %>
+  <script>
+
+    $(document).ready(function(){
+
+       var room = new Chamber.Models.Room(<%= raw @room.to_json %>);
+
+       var view = new Chamber.Views.Rooms.ShowView({
+         el:           "#room",
+         model:        room
+       });
+
+       // Subscribe to messages in this room.
+       juggernaut.subscribe("rooms:" + room.id + ":messages", function(data) {
+         if(data.action == "create") {
+           var message = new Chamber.Models.Message(data.message);
+           room.messages.add(message)
+         }
+       });
+
+       // Subscribe to participants in this room.
+       juggernaut.subscribe("rooms:" + room.id + ":participants", function(data) {
+         if(data.action == "create") {
+           var participant = new Chamber.Models.Participant(data.participant);
+           room.participants.add(participant)
+         }
+       });
+
+    });
+
+  </script>
+<% end %>
+
 <div class="row-fluid" id="room">
   <div class="span3">
     <div class="well sidebar-nav">

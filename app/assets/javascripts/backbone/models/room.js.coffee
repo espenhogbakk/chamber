@@ -1,14 +1,13 @@
 class Chamber.Models.Room extends Backbone.Model
-  paramRoot: 'room'
-  
+  paramRoot: "room"
+
   initialize: ->
     @messages = new Chamber.Collections.MessagesCollection
-    @messages.url = '/rooms/' + this.id + '/messages'
-    return this
+    @messages.url = "/rooms/" + @id + "/messages"
 
-  defaults:
-    name: null
+    @participants = new Chamber.Collections.ParticipantsCollection
+    @participants.url = "/rooms/" + @id + "/participants"
 
 class Chamber.Collections.RoomsCollection extends Backbone.Collection
   model: Chamber.Models.Room
-  url: '/rooms'
+  url: "/rooms"
