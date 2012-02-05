@@ -58,29 +58,26 @@ class Chamber.Views.Rooms.ShowView extends Backbone.View
     @upload file for file in files
   
   upload: (file) =>
-    console.log(file)
-    
     @options.messages.url = '/messages'
     message = @options.messages.create({
       body: "Uploading " + file.name,
       room_id: room.id
     }, {
       silent: true, 
-      success: ->
-        $.upload("/attachments", {file: file}, {
+      success: (model, response) ->
+        $.upload("/attachments", {message_id: model.id,attachment: file}, {
           dataType: "json",
           upload: {
             progress: (e) ->
-              console.log(e)
+              console.log("Upload progress event:", e)
           }
         }).success((data) ->
-          message.set({
-            body: file.name + ": "
+          # Hack to not cause havoc in the MessagesController#update
+          model.unset("room")
+          model.unset("user")
+          model.save({
+            body: file.name + ": " + data.attachment_url
           })
-          # Hack to dont confuse the MessagesController
-          message.unset('room', { silent: true })
-          message.unset('user', { silent: true })
-          message.save()
         )
     })
     

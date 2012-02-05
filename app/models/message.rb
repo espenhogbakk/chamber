@@ -13,7 +13,8 @@ class Message < ActiveRecord::Base
       room: room,
       user: user,
       updated_at: updated_at,
-      created_at: created_at
+      created_at: created_at,
+      attachment: attachment,
     }
   end
   

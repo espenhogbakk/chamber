@@ -7,11 +7,8 @@ class Chamber.Views.Messages.MessageView extends Backbone.View
   #  "click .destroy" : "destroy"
 
   initialize: () ->
-    @model.bind('change', @update)
-
-  update: (message) =>
-    console.log("MODEL HAS CHANGED")
-    console.log(message)
+    console.log("INIT MESSAGEVIEW", this)
+    @model.bind('change', @render, this);
 
   tagName: "tr"
   
