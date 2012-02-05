@@ -3,6 +3,7 @@ Chamber.Views.Messages ||= {}
 class Chamber.Views.Messages.IndexView extends Backbone.View
   initialize: =>
     @options.messages.bind("add", @addMessage)
+    @scroll()
 
   # Add a single message to this view.
   #

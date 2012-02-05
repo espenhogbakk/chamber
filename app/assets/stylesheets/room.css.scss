@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #messages {
-  height: 500px;
+  margin: 20px 0 0 0;
+  display: block;
+  height: 500px !important;
   overflow-y: scroll;
 }
