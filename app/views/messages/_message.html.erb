@@ -1,4 +1,14 @@
 <tr>
   <td class="span2"><%= message.user.full_name || "Unknown" %></td>
-  <td><%= message.body %></td>
+  <td>
+    <% if message.attachment %>
+      <% if message.attachment.attachment_content_type.split("/").first == 'image' %>
+        <img src="<%= message.attachment.attachment_url %>" />
+      <% else %>
+        <a href="<%= message.attachment.attachment_url %>">Download</a>
+      <% end %>
+    <% else %>
+      <%= message.body %>
+    <% end %>
+  </td>
 </tr>

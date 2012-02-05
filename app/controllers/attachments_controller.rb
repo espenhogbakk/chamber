@@ -31,7 +31,7 @@ class AttachmentsController < ApplicationController
   end
 
   def create
-    @attachment = Attachment.new(params[:attachment])
+    @attachment = Attachment.new(message_id: params[:message_id], attachment: params[:attachment])
 
     respond_to do |format|
       if @attachment.save

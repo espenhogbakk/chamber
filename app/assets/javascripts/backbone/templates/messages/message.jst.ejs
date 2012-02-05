@@ -1,2 +1,12 @@
 <td class="span2"><%= user.full_name %></td>
-<td><%= body %></td>
+<td>
+  <% if (attachment) { %>
+    <% if (attachment.attachment_content_type.split("/", 1)[0] == 'image') { %>
+      <img src="<%= attachment.attachement_url %>" />
+    <% } else { %>
+      <a href="<%= attachment.attachment_url %>">Download</a>
+    <% }%>
+  <% } else { %>
+    <%= body %>
+  <% }%>
+</td>

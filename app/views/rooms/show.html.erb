@@ -47,8 +47,8 @@
     <div>
       <h1><%= @room.name %></h1>
 
-      <div id="messages" class="wrapper">
-        <table class="table table-striped table-bordered">
+      <div class="wrapper">
+        <table class="table table-striped table-bordered" id="messages">
           <tbody>
             <% @room.messages.each do |message| %>
             <%= render message %>
