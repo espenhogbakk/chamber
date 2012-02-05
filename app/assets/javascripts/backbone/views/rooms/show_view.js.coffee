@@ -8,6 +8,9 @@ class Chamber.Views.Rooms.ShowView extends Backbone.View
   }
   
   initialize: ->
+    # Add drop event on #messages
+    $("#messages").dropArea().bind("drop", @drop)
+
     @messages_index_view = new Chamber.Views.Messages.IndexView(
       {
         el: $("#messages", @el)
@@ -44,3 +47,40 @@ class Chamber.Views.Rooms.ShowView extends Backbone.View
 
     e.preventDefault()
     return false
+  
+  
+  drop: (e) =>
+    e.stopPropagation()
+    e.preventDefault()
+    e = e.originalEvent
+    
+    files = e.dataTransfer.files
+    @upload file for file in files
+  
+  upload: (file) =>
+    console.log(file)
+    
+    @options.messages.url = '/messages'
+    message = @options.messages.create({
+      body: "Uploading " + file.name,
+      room_id: room.id
+    }, {
+      silent: true, 
+      success: ->
+        $.upload("/attachments", {file: file}, {
+          dataType: "json",
+          upload: {
+            progress: (e) ->
+              console.log(e)
+          }
+        }).success((data) ->
+          message.set({
+            body: file.name + ": "
+          })
+          # Hack to dont confuse the MessagesController
+          message.unset('room', { silent: true })
+          message.unset('user', { silent: true })
+          message.save()
+        )
+    })
+    
