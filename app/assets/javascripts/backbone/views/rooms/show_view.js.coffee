@@ -72,12 +72,12 @@ class Chamber.Views.Rooms.ShowView extends Backbone.View
               console.log("Upload progress event:", e)
           }
         }).success((data) ->
+          # TODO Rerender the message after updating
           # Hack to not cause havoc in the MessagesController#update
-          model.unset("room")
-          model.unset("user")
-          model.save({
-            body: file.name + ": " + data.attachment_url
-          })
+          #model.unset("room")
+          #model.unset("user")
+          #model.set({attachment: data, body: file.name + ": " + data.attachment_url})
+          #model.save()
         )
     })
     
