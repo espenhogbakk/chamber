@@ -41,6 +41,11 @@
         <% end %>
       </ul>
     </div><!--/.well -->
+
+    <%= form_tag({controller: "participants", action: "destroy", room_id: @room.id, id: current_user.id}, method: "delete") do %>
+      <%= submit_tag("Leave", class: "btn", name: "leave") %>
+    <% end %>
+
   </div><!--/span-->
 
   <div class="span9">
