@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
   
   before_filter :authenticate_user!
-  before_filter :find_room, :only =>[:show, :update, :destroy]
+  before_filter :find_room, :only =>[:show, :update, :destroy, :edit]
   
   def index
     @rooms = Room.all
@@ -40,20 +40,36 @@ class RoomsController < ApplicationController
       end
     end
   end
-  
-  
+
+  # GET /rooms/1/edit
+  def edit
+  end
+
+  # PUT /rooms/1
+  # PUT /rooms/1.json
   def update
-    @room.update_attributes!(params)
-    
-    head :ok
+    respond_to do |format|
+      if @room.update_attributes(params[:room])
+        format.html { redirect_to @room, notice: 'Room was successfully updated.' }
+        format.json { head :ok }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @room.errors, status: :unprocessable_entity }
+      end
+    end
   end
   
+  # DELETE /rooms/1
+  # DELETE /rooms/1.json
   def destroy
     @room.destroy
 
-    head :ok
+    respond_to do |format|
+      format.html { redirect_to rooms_url }
+      format.json { head :ok }
+    end
   end
-  
+
   private
     def find_room
       @room = Room.find(params[:id])

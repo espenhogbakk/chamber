@@ -50,7 +50,7 @@
 
   <div class="span9">
     <div>
-      <h1><%= @room.name %></h1>
+      <h1><%= @room.name %> <small><%= link_to 'edit', edit_room_path(@room) %></small></h1>
 
       <div class="wrapper">
         <table class="table table-striped table-bordered" id="messages">

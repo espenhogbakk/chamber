@@ -1,0 +1,9 @@
+<h1>Editing room</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', @room %>
+
+<%= form_tag(room_path(@room), method: "delete", class: "form-inline") do %>
+  <%= submit_tag("Delete", class: "btn") %>
+<% end %>
