@@ -1,7 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 room1:
-  name: Imperial spacecraft
+  name: Bring balance to the force
+  topic: Teach master luke how to be jedi
 
 room2:
-  name: Millennium Falcon
+  name: How to fight the empire
