@@ -1,8 +1,8 @@
 class RoomsController < ApplicationController
-  
+
   before_filter :authenticate_user!
   before_filter :find_room, :only =>[:show, :update, :destroy, :edit]
-  
+
   def index
     @rooms = Room.all
     
@@ -11,7 +11,7 @@ class RoomsController < ApplicationController
       format.json { render json: @rooms }
     end
   end
-  
+
   def show
     if @room.participants.where(user_id: current_user.id).empty?
       @room.participants.create(user_id: current_user.id)
@@ -58,7 +58,7 @@ class RoomsController < ApplicationController
       end
     end
   end
-  
+
   # DELETE /rooms/1
   # DELETE /rooms/1.json
   def destroy
