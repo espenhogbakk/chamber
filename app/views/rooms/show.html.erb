@@ -41,11 +41,16 @@
         <% end %>
       </ul>
     </div><!--/.well -->
+
+    <%= form_tag({controller: "participants", action: "destroy", room_id: @room.id, id: current_user.id}, method: "delete") do %>
+      <%= submit_tag("Leave", class: "btn", name: "leave") %>
+    <% end %>
+
   </div><!--/span-->
 
   <div class="span9">
     <div>
-      <h1><%= @room.name %></h1>
+      <h1><%= @room.name %> <small><%= link_to 'edit', edit_room_path(@room) %> <br /> <%= @room.topic %></small></h1>
 
       <div class="wrapper">
         <table class="table table-striped table-bordered" id="messages">

@@ -47,4 +47,22 @@ class ParticipantsController < ApplicationController
     end
   end
 
+  # DELETE /participants/1
+  # DELETE /participants/1.json
+  def destroy
+    if params.include? :room_id
+      # If room is is sent, delete by user_id
+      room = Room.find(params[:room_id])
+      @participant = room.participants.where(user_id: params[:id]).first
+    else
+      @participant = Participant.find(params[:id])
+    end
+    @participant.destroy
+
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.json { head :ok }
+    end
+  end
+
 end
