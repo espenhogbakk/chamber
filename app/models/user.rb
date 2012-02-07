@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   
   has_many :messages, :dependent => :destroy
   has_many :participants
-  has_many :rooms, :through => :participants, :dependent => :destroy  
+  has_many :rooms, :through => :participants, :dependent => :destroy
   
   def serializable_hash(options = nil)    
     {
