@@ -24,6 +24,5 @@
 window.juggernaut = new Juggernaut {
    secure:     false,
    host:       "<%= Chamber::Application.config.juggernaut_host %>",
-   port:       <%= Chamber::Application.config.juggernaut_port %>,
-   transports: ["xhr-polling", "jsonp-polling"]
+   port:       <%= Chamber::Application.config.juggernaut_port %>
 }
