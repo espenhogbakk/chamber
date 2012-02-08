@@ -1,7 +1,16 @@
 <% content_for :head do %>
   <script>
-
     $(document).ready(function(){
+
+      window.juggernaut = new Juggernaut({
+        secure: false,
+        host: "<%= Chamber::Application.config.juggernaut_host %>",
+        port: <%= Chamber::Application.config.juggernaut_port %>
+      })
+      juggernaut.meta = {
+        user_id: <%= current_user.id %>,
+        room_id: <%= @room.id %>
+      }
 
        var room = new Chamber.Models.Room(<%= raw @room.to_json %>);
 
@@ -25,6 +34,48 @@
            room.participants.add(participant)
          }
        });
+       
+       // Subscribe to the roster for this room.
+       juggernaut.subscribe("rooms:" + room.id + ":roster", function(data) {
+
+        // Fetch the userID from the roster
+        var userID = data.roster.roster.user_id
+
+         switch(data.action) {
+           case "create":
+             console.log("new participant online")
+             
+             // TODO Use backbone to manipulate the participant
+             // so that it gets a flog "online" or something simular.
+             // But since `room.participants` is not populated, that
+             // does not work at the moment (without fetching)
+             //var participant = room.participants.get(userID)
+             //participant.set({online: true})
+             //participant.save()
+             
+             // Temporarly hack
+             if ($("span", "[data-user-id=" + userID +"] a").length < 1) {
+               $("a", "[data-user-id=" + userID +"]").append(' <span class="label">online</span>')
+              }
+
+             break
+           case "destroy":
+             console.log("particpant leaves")
+
+             // TODO Use backbone to manipulate the participant
+             // so that it gets a flog "offline" or something simular.
+             // But since `room.participants` is not populated, that
+             // does not work at the moment (without fetching)
+             //var participant = room.participants.get(userID)
+             //participant.set({online: false})
+             //participant.save()
+
+             // Temporarly hack
+             $("span", "[data-user-id=" + userID +"] a").remove()
+
+             break
+         }
+       });
 
     });
 
@@ -37,7 +88,7 @@
       <ul class="nav nav-list" id="participants">
         <li class="nav-header">Members of chatroom</li>
         <% @room.users.each do |user| %>
-        <li><a href="#"><%= user.full_name %></a></li>
+        <li data-user-id="<%= user.id %>"><a href="#"><%= user.full_name %></a></li>
         <% end %>
       </ul>
     </div><!--/.well -->
