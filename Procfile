@@ -1,0 +1,1 @@
+worker: scripts/roster
