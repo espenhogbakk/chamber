@@ -2,7 +2,9 @@ class Roster < SuperModel::Base
   include SuperModel::Redis::Model
   include SuperModel::Timestamp::Model
 
-  #redis_options :host => "redistogo@viperfish.redistogo.com", :port => 9158, :password => "3d4284db411dad03463355e7e48f92f5"
+  self.redis_options[:host] = "viperfish.redistogo.com"
+  self.redis_options[:port] = 9158
+  self.redis_options[:password] = "3d4284db411dad03463355e7e48f92f5"
 
   attributes :count
 
