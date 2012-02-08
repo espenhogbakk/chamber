@@ -2,8 +2,7 @@ class Roster < SuperModel::Base
   include SuperModel::Redis::Model
   include SuperModel::Timestamp::Model
 
-  uri = URI.parse(ENV["REDISTOGO_URL"])
-  redis_options :host => uri.host, :port => uri.port, :password => uri.password
+  redis_options :host => "redistogo@viperfish.redistogo.com", :port => 9158, :password => "3d4284db411dad03463355e7e48f92f5"
 
   attributes :count
 
