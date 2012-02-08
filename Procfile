@@ -1,1 +1,1 @@
-worker: scripts/roster
+worker: script/roster
