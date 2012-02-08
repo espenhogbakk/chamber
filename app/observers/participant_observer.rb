@@ -22,4 +22,5 @@ class ParticipantObserver < ActiveRecord::Observer
       participant: participant
     }
   end
+
 end

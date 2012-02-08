@@ -4,6 +4,7 @@ gem 'rails', '3.1.3'
 
 gem "rack-sprockets"
 
+gem "supermodel", :git => "git://github.com/Sen/supermodel.git"
 gem "juggernaut"
 gem "thin"
 gem "rails-backbone"

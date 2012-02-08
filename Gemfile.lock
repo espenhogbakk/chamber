@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/Sen/supermodel.git
+  revision: 387e4e228e6efa1f8bd0489ec898ba389dbf755c
+  specs:
+    supermodel (0.1.4)
+      activemodel (>= 3.0.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -156,6 +163,7 @@ DEPENDENCIES
   rails (= 3.1.3)
   rails-backbone
   sass-rails (~> 3.1.5)
+  supermodel!
   thin
   turn (= 0.8.2)
   uglifier (>= 1.0.3)
