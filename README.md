@@ -1,4 +1,4 @@
-#Intro
+# Intro
 
 Chamber is an open source chatroom for groups. It uses all the latest and coolest webtechnology to provide a fast and slick experience.
 
